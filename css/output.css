@@ -807,6 +807,9 @@
       flex-direction: var(--tabs-direction);
     }
   }
+  .block {
+    display: block;
+  }
   .flex {
     display: flex;
   }
@@ -833,6 +836,9 @@
   }
   .h-48 {
     height: calc(var(--spacing) * 48);
+  }
+  .h-64 {
+    height: calc(var(--spacing) * 64);
   }
   .h-72 {
     height: calc(var(--spacing) * 72);
@@ -1450,6 +1456,16 @@
     &:hover {
       @media (hover: hover) {
         background-color: var(--color-secondary);
+      }
+    }
+  }
+  .hover\:bg-secondary\/10 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-secondary);
+        @supports (color: color-mix(in lab, red, red)) {
+          background-color: color-mix(in oklab, var(--color-secondary) 10%, transparent);
+        }
       }
     }
   }
